@@ -1,0 +1,30 @@
+<div id="modalClienteNuevo" class="modal fade" tabindex="-1" aria-labelledby="modalClienteNuevo" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="exampleModalLabel">Nuevo Cliente</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/crear" method="POST">
+                    <div class="col-md-12">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input id="nombre" name="nombre" type="text" class="form-control" required>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="apellidos" class="form-label">Apellidos</label>
+                        <input id="apellidos" name="apellidos" type="text" class="form-control" required>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="direccion" class="form-label">Dirección</label>
+                        <input id="direccion" name="direccion" type="text" class="form-control" required>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

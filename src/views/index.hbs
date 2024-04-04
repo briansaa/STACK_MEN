@@ -1,1 +1,98 @@
-<h1>Principal</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2SR500mGNYDnhzAbDs0XxcvSN1TPprVMTNDbiYZCxYb0017+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>CRUD MongoDB</title>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar bg-primary navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand link-warning fs-3" href="#">Stack</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav mx-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <li class="nav-item">
+                    <a class="nav-link link-light" aria-current="page" href="#">Inicio</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link link-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Ventas</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Caja</a></li>
+                        <li><a class="dropdown-item" href="#">Cliente</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle link-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Compras</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Proveedor</a></li>
+                        <li><a class="dropdown-item" href="#">Orden de Compra</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle link-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Almacen</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Kardex</a></li>
+                        <li><a class="dropdown-item" href="#">Producto</a></li>
+                        <li><a class="dropdown-item" href="#">Categoría</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                <button class="btn btn-outline-light" type="submit">Búsqueda</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container" style="margin-top: 50px;">
+    <br> <br>
+    <a type="button" class="btnNuevo btn btn-danger">Nuevo Cliente</a>
+
+    <!-- Table of Clients -->
+    <table id="tablaClientes" class="table mt-4 table-hover">
+        <thead class="table-info">
+            <tr>
+                <th style="display: none;">ID</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Direccion</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% clientes.forEach((cliente) => { %>
+                <tr>
+                    <td style="display: none;"><%= cliente._id %></td>
+                    <td><%= cliente.nombre %></td>
+                    <td><%= cliente.apellidos %></td>
+                    <td><%= cliente.direccion %></td>
+                    <td>
+                        <a type="button" class="btnEditar btn btn-outline-primary bi bi-pencil"></a>
+                        <a href="/borrar/<%= cliente._id %>" class="btn btn-outline-danger bi bi-trash"></a>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+
+
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISKJkNUaaKMOLD®//E1J19smozuHV6z31ehds+3U1b9Bn9P1x0x4" crossorigin="anonymous"></script>
+
+</body>
+</html>
